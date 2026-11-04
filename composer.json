@@ -1,0 +1,36 @@
+{
+    "name": "ecomalo/ecomalo-php",
+    "description": "Connect a Laravel or plain PHP shop to EcomAlo: send orders, receive signed status and tracking webhooks, sync products and stock.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["ecomalo", "ecommerce", "courier", "bangladesh", "order-confirmation", "laravel"],
+    "homepage": "https://ecomalo.com",
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.5 || ^8.0"
+    },
+    "suggest": {
+        "illuminate/support": "For the Laravel service provider, facade, config and webhook route (Laravel 10+)."
+    },
+    "autoload": {
+        "psr-4": {
+            "EcomAlo\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EcomAlo\\Laravel\\EcomAloServiceProvider"
+            ],
+            "aliases": {
+                "EcomAlo": "EcomAlo\\Laravel\\Facades\\EcomAlo"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
